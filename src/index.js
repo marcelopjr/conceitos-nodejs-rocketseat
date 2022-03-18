@@ -89,7 +89,7 @@ app.put("/todos/:id", checksExistsUserAccount, (request, response) => {
   todo.title = title;
   todo.deadline = new Date(deadline);
 
-  return response.send("Todo Atualizado!");
+  return response.json(todo);
 });
 
 app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
@@ -105,7 +105,7 @@ app.patch("/todos/:id/done", checksExistsUserAccount, (request, response) => {
 
   todo.done = true;
 
-  return response.send("Todo alterado para feito!");
+  return response.json(todo);
 });
 
 app.delete("/todos/:id", checksExistsUserAccount, (request, response) => {
